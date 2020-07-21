@@ -1,6 +1,6 @@
 # Program funkcja kwadratowa to program którego celem jest policzenie delty oraz określenie miejsc zerowych jeśli takie istnieją.
 
-## Wymagania Python 3, math module
+Wymagania Python 3, math module
 
 # Program:
 - sprawdza czy funckja jest kwadratowa
