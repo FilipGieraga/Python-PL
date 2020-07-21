@@ -16,7 +16,7 @@ Wymagania: Python 3, random module
 
 # Szczegółowy opis:
 Program zaczyna od wywołania funkcji lotto(), pytając użytkownika czy chce wybrać swoje numery.
-Jeśli tak, tworzy pusty zbiór(set()), który będzie przechowywał nasze wybrane liczby. Program
+Jeśli tak, tworzy pusty zbiór (set()), który będzie przechowywał nasze wybrane liczby. Program
 pozwala wprowadzać poszczególne elementy, sprawdzając przy tym czy liczby znajdują się w odpowiednim zakresie,
 czy nie powtarzają się i czy są w ogóle liczbami całkowitymi.
 Jeśli użytkownik nie zdecyduje się ich wprowadzić, zostaną wybrane automatycznie.
