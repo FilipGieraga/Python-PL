@@ -19,11 +19,11 @@ transport do domu taksówką ze spaceru. Będzię on potrzebny zawsze kiedy prze
 dłuższy niż zmienna distance_limit.
 W tej funkcji mamy również zmienną number_of_walks, która determinuje ile razy zostaną wykonane spacery
 dla pojedyńczej długości spaceru.
-Zmienna walk_lengths_range to zakres długości naszych spacerów od jednego do długości podanej.\n
-Przykład:
-number_of_walks=1000
-walk_lengths_range=100
-distance_limit=10
+Zmienna walk_lengths_range to zakres długości naszych spacerów od jednego do długości podanej.<br>
+Przykład:<br>
+number_of_walks=1000<br>
+walk_lengths_range=100<br>
+distance_limit=10<br>
 Dla każdej długości spacerów od 1 do 100 kroków symulacja spacerów zostanie wykonana 1000 razy. Jeżeli bezwględny
 dystans od domu będzie krótszy lub równy 10, zainkrementowana zostanie zmienna no_transport, której początkowa
 wartość dla każdej długości spaceru jest równa zero. Po ostatnim wykonanym spacerze dla konkretnej ilości
