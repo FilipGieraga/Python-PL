@@ -1,4 +1,4 @@
-# Program pozwala wygenerować losowe hasło określając przy tym ilość poszczególnych znaków tj. małe i duże litery, znaki specjalne i cyfry. Pozwala również wygenerować losowe hasło bez określania co ma się w nim znajdowaćału.
+# Program pozwala wygenerować losowe hasło określając przy tym ilość poszczególnych znaków tj. małe i duże litery, znaki specjalne i cyfry. Pozwala również wygenerować losowe hasło bez określania co ma się w nim znajdować
 
 Wymagania: Python 3, random module
 
