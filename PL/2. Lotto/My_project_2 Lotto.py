@@ -1,16 +1,3 @@
-'''
-Wytyczne
-Program realizujący grę LOTTO  na tzw. chybi-trafił.
-Kupon składa się z 1 zakładu (tablica dwuwymiarowa liczb całkowitych lub wartości logicznych o rozmiarze 7x7),
-w którym program wybiera (zakreśla) losowo 6 różnych liczb z przedziału [1,49].
-Otrzymujemy w ten sposób określony zakład.
-Następnie maszyna losująca (dalsza część programu) wyznacza 6 niepowtarzających się liczb (tablica jednowymiarowa)
-również z przedziału [1,49].
-Program sprawdza rezultat losowania i generuje raport na ekran który zawiera:
-automatycznie wypełniony zakład z widocznymi skreśleniami (znak ‘X’ przy skreślonej liczbie),
-aktualny wynik losowania (z maszyny losującej),
-rezultat trafień – pokrycie się aktualnego losowanie z wcześniej zakreślonymi liczbami.
-'''
 import random
 
 
