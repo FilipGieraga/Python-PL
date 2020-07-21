@@ -5,7 +5,7 @@ Wymagania Python 3
 # Program:
 - na początku prosi o podanie zdania do zaszyfrowania
 - pyta czy ma uwzględnić polskie znaki tj. ź 
-- szyfruje ciąg znaków przesuwając każdy znak o trzy litery w naszym alfabecie w prawo 
+- szyfruje ciąg znaków przesuwając każdy znak o trzy litery w naszym alfabecie w prawo<br>
 np. dla a będzie d(bez pl znaków), c(z uwzględnieniem polskich znaków)
 - po przestawieniu wszystkich znaków drukuje zaszyfrowaną treść
 - pyta czy chcemy spróbować ponownie
