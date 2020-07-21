@@ -1,5 +1,4 @@
-# Program Lotto symuluje kumulację lotto pozwalając użytkownikowi wybrać swoje numery, wygerować je automatycznie, sprawdzić ile liczb zostało
-# trafione oraz losować automatycznie tak długo aż zostanie trafiona wybrana ilość liczb.
+# Program Lotto symuluje kumulację lotto pozwalając użytkownikowi wybrać swoje numery, wygerować je automatycznie, sprawdzić ile liczb zostało trafione oraz losować automatycznie tak długo aż zostanie trafiona wybrana ilość liczb.
 
 Wymagania: Python 3, random module
 
