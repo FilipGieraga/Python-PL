@@ -1,3 +1,6 @@
 # Overview of what I already learned:
 
-fsdfsdf
+- if and while loops
+- tuples, lists, sets
+- dictioraries
+
