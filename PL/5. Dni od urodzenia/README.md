@@ -9,7 +9,7 @@ Wymagania: Python 3, datetime module
 - liczy delte odejmując od dnia dzisiejszego, datę urodzenia
 - w przypadku gdy podana data jest starsza od dzisiejszej, program podaje nam liczbę dni,
   godzin i minut od dnia urodzenia
-- w przypadku gdy podana data jest młodsza od dzisiejszej, program podaję nam ile mielibyśmy
+- w przypadku gdy data jest podana do przodu, program podaję nam ile mielibyśmy
   dni, godzin oraz minut przeżytych od dnia dzisiejszego
 - jeśli wpiszemy dzisiejszą datę program jedynie wypisze, że dzisiejsza data została wprowadzona
 - program pozwala ponownie wprowadzić datę, albo zakończyć działanie
