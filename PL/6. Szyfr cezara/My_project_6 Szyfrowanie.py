@@ -5,10 +5,10 @@ string1="abcdefghijklmnopqrstuvwxyzabc"
 string2=" -.,"
 
 def choice():
-    choi = input("Czy chcesz spróbować jeszcze raz?(y/n)\n")
-    if choi == "y":
-        choi1=input("Czy chcesz zaszyfrować wiadomość?(y/n)\n")
-        if choi1=="y":
+    choi = input("Czy chcesz spróbować jeszcze raz?(t/n)\n")
+    if choi == "t":
+        choi1=input("Czy chcesz zaszyfrować wiadomość?(t/n)\n")
+        if choi1=="t":
             cipher(string, string1, string2)
         else:
             decipher(string, string1, string2)
@@ -18,8 +18,8 @@ def choice():
 
 def cipher(string, string1, string2):
     zdanie=input("Wprowadź zdanie do zaszyfrowania:\n")
-    p = input("Czy uwzględnić polskie znaki?(y/n)\n")
-    if p == "y":
+    p = input("Czy uwzględnić polskie znaki?(t/n)\n")
+    if p == "t":
         p = string
     else:
         p = string1
@@ -43,8 +43,8 @@ def cipher(string, string1, string2):
 
 def decipher(string,string1,string2):
     zdanie=input("Wprowadź zdanie do rozszyfrowania:\n")
-    p=input("Czy uwzględnić polskie znaki?(y/n)\n")
-    if p=="y":
+    p=input("Czy uwzględnić polskie znaki?(t/n)\n")
+    if p=="t":
         p=string
     else:
         p=string1
