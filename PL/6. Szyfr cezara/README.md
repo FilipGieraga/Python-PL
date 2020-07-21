@@ -1,4 +1,4 @@
-# Program szyfr cezara pozwala zaszyfrować i odszyfrować wiadomość włączając w to polskie znaki badź bez nich
+# Program szyfr cezara pozwala zaszyfrować i odszyfrować wiadomość
 
 Wymagania Python 3
 
