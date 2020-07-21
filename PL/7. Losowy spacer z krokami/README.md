@@ -32,10 +32,10 @@ kroków, podana nam zostanie procentowo ilość spacerów z których nie potrzeb
 
 # draw_random_walk(n,forward,pointer,speed):
 Funkcja draw_random_walk(n,forward,pointer,speed) jest moją ulubioną w tym programie i rysuje nam losowy spacer w
-oparciu o przyjęte parametry.
-n- to ilość kroków jaka ma zostać narysowana
-forward- to długość pojedyńczego kroku w pixelach
-pointer- to wielkość kropki jaka jest stawiana na początku(czerwona) i końcu(niebieska) w pixelach
+oparciu o przyjęte parametry.<br>
+n- to ilość kroków jaka ma zostać narysowana<br>
+forward- to długość pojedyńczego kroku w pixelach<br>
+pointer- to wielkość kropki jaka jest stawiana na początku(czerwona) i końcu(niebieska) w pixelach<br>
 speed- szybkość rysowania spaceru
 
 ## Disclaimer:
