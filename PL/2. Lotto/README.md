@@ -5,7 +5,7 @@ Wymagania: Python 3, random module
 # Program:
 - pozwala na wprowadzenie własnego losu, czyli 6 liczb całkowitych z
   przedziału od 1 do 49, bez powtórzeń
-- pozwala wygenerować własny los autmatycznie
+- pozwala wygenerować własny los automatycznie
 - losuje wyniki kumulacji
 - sprawdza czy w naszym losie są jakieś trafienia i zlicza je
 - pyta użytkownika jaką liczbę trafień chciałby uzyskać od 1 do 6
