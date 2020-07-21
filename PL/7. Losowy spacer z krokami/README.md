@@ -37,3 +37,6 @@ n- to ilość kroków jaka ma zostać narysowana
 forward- to długość pojedyńczego kroku w pixelach
 pointer- to wielkość kropki jaka jest stawiana na początku(czerwona) i końcu(niebieska) w pixelach
 speed- szybkość rysowania spaceru
+
+## Disclaimer:
+Wszystkie funkcje są zahaszowane, żeby je uruchomić należy usunąć # w odpowiednim miejscu
