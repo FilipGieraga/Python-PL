@@ -21,7 +21,7 @@ Widzimy tutaj, że element o wsp. 3,2 posiada dwa rozwiązania i w tej iteracji 
 czyli 8 i znajdzie się ono w tej iteracji pętli w sudoku.
 Jeżeli dany element ma tylko jedno rozwiązanie zostaje ono wpisane do sudoku, ponieważ nie ma wtedy wątpliowści, że musi się ono tam znaleźć.
 Program przy każdej swojej iteracji tylko częściowo wypełnia sudoku, jedynie tam gdzie jest tego pewien. Pod koniec każdej iteracji, pokazuje nam:<br>
-słownik współrzędnych i rozwiązań dla danej iteracji<br>wyświetla które to podejście <br>liczbę wstawień do sudoku.
+słownik współrzędnych i rozwiązań dla danej iteracji<br>wyświetla które to podejście <br>liczbę wstawień do sudoku<br>
 Niestety sudoku nie jest takie proste, że wystarczy jedynie sprawdzić pion, poziom i kwadrat. Są sudoku które dla każdego niezerowego elementu,
 posiadają wiele rozwiązań i tak jest np. z sudoku nr 3 gdzie program już przy pierwszej iteracji nie może nic wstawić dlatego zapętla się 15 razy i kończy.
 
