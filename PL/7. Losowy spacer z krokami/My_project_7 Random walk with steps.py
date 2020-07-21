@@ -25,11 +25,11 @@ def max_min_steps(number_of_walks,steps_taken):
     distances_walked=set()
     for i in range(number_of_walks):
         walk=random_walk(steps_taken)
-        print(f"Observation: {i+1}, Cordinates: {walk}, Distance from home: {abs(walk[0])+abs(walk[1])}")
+        print(f"Obserwacja: {i+1}, Współrzędne: {walk}, Odległość od domu: {abs(walk[0])+abs(walk[1])}")
         distance_walked= abs(walk[0])+abs(walk[1])
         distances_walked.add(distance_walked)
-    print(f"Min absolute distance walked:{min(distances_walked)}")
-    print(f"Max absolute distance walked:{max(distances_walked)}")
+    print(f"Minimalny bezwględny przebyty dystans:{min(distances_walked)}")
+    print(f"Maksymalny bezwględny przebyty dystans:{max(distances_walked)}")
 
 
 
@@ -45,7 +45,7 @@ def walk_loop(number_of_walks,walk_lenghts_range,distance_limit):
             if distance<=distance_limit:
                 no_transport+=1
         no_transport_percantage= float(no_transport)/ number_of_walks
-        print(f"Walk size = {walk_length}, % of no transport = {100*no_transport_percantage}")
+        print(f"Ilość kroków = {walk_length}, % wartość braku transportu = {100*no_transport_percantage}")
 
 
 
@@ -78,7 +78,7 @@ def draw_random_walk(n,forward,pointer,speed):
     make.dot(pointer, 'blue')
     make.end_fill()
     turtle.done()
-    print(f"({x},{y}), Distance from home: {abs(x) + abs(y)}")
+    print(f"({x},{y}), Odległość od domu: {abs(x) + abs(y)}")
     return x, y
 
 #####--------- draw_random_walk(steps,line length for each step,point size for start and end,speed)
@@ -92,14 +92,14 @@ number_of_walks=1000
 walk_lengths_range=100
 # start from one and goes to walk_lengt_range
 distance_limit=10
-# once the distance limit is surpassed at the end of each walk, you need a transport back to start point
+# once the distance limit is surpassed at the end of each walk, you need a transport back to the starting point
 #####--------- walk_loop(number_of_walks,walk_lengts_range,distance_limit)
-# walk_loop(number_of_walks,walk_lengths_range,distance_limit)
+# walk_loop(1000,100,10)
 
 
 #####--------- x,y=random_walk(steps_to_take)
 # x,y = random_walk(100)
-# print(f"({x},{y}), Distance from home: {abs(x) + abs(y)}")
+# print(f"({x},{y}), Bezwzględny dystans od domu: {abs(x) + abs(y)}")
 
 
 #####--------- max_min_steps(number_of_walks,steps_taken)
