@@ -1,2 +1,3 @@
-#Overview of what I already learned
+# Overview of what I already learned:
+
 fsdfsdf
