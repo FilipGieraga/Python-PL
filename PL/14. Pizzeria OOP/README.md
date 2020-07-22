@@ -13,17 +13,15 @@ Nazwa zmiennej zostaje przechowana w liście menu, która może zostać późnie
 Podczas deklarowania każdej instancji klasy są również sprawdzane składniki w pizzy. Nie możemy stworzyć instancji klasy, w której
 składnik nie istnieje na naszej liście zadekladowanej wewnątrz klasy.
 
-Kiedy nasze instancje są już zadeklarowane, możemy każdą z nich wyświetlić w sposób czytelny dzięki metodzie __repr__
-Za pomocą funkcji klasy Pizza.wyswietl_menu() możemy wyświetlić menu, które składa się ze wszystkich stworzonych pizz.
-Za pomocą statycznej metody Pizza.godziny_otwarcia() możemy zobaczyć, kiedy pizzeria jest otwarta.
-Metoda cena rozmiaru podaje nam ceny rozmiarów poszczególnych pizz licząc ją poprzez pomnnożenie rozmiaru przez wskaźnik
-W przypadku rozmiaru 1, czyli najmniejszego mnożenie nie zostaje wykonane.
-W przypadku rozmiaru 2, wskaźnik to 1.4, a przy trójce, wskaźnik to 2.
-Aby wyświetlić cenę największego rozmiaru Capricciosy, wystarczy wpisać: print(Capricciosa.cena_rozmiaru(3))
-Pizza.ilosc_pozycji wyświetli nam ile jest instancji w klasie
+Kiedy nasze instancje są już zadeklarowane, możemy każdą z nich wyświetlić w sposób czytelny dzięki metodzie __repr__<br>
+Za pomocą funkcji klasy Pizza.wyswietl_menu() możemy wyświetlić menu, które składa się ze wszystkich stworzonych pizz.<br>
+Za pomocą statycznej metody Pizza.godziny_otwarcia() możemy zobaczyć, kiedy pizzeria jest otwarta.<br>
+Metoda cena rozmiaru podaje nam ceny rozmiarów poszczególnych pizz licząc ją poprzez pomnnożenie rozmiaru przez wskaźnik<br>
+W przypadku rozmiaru 1, czyli najmniejszego mnożenie nie zostaje wykonane.<br>
+W przypadku rozmiaru 2, wskaźnik to 1.4, a przy trójce, wskaźnik to 2.<br>
+Aby wyświetlić cenę największego rozmiaru Capricciosy, wystarczy wpisać: print(Capricciosa.cena_rozmiaru(3))<br>
+Pizza.ilosc_pozycji wyświetli nam ile jest instancji w klasie<br>
 Dwie najważniejsze metody w tej klasie to: self.zamow() i Pizza.zrob_to_sam()
-
-
 
 
 # Metoda Pizza.zrob_to_sam():
