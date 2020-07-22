@@ -186,7 +186,7 @@ def zarobki_zw_pracowników(df):
 
 def excel_firma(headers,id,imie,nazwiska,plec,e_mail,data_urodzenia,wiek,data_rozpoczęcia,staz_pracy,
                 stanowisko,dzial,zar_miesieczne,zar_roczne):
-    workbook = xlsxwriter.Workbook('Firma.xlsx')
+    workbook = xlsxwriter.Workbook('Struktura_Korporacyjna.xlsx')
     worksheet = workbook.add_worksheet(name="Pracownicy")
     cell_format = workbook.add_format({'bold': True})
     worksheet.freeze_panes(1, 0)
@@ -368,7 +368,7 @@ def excel_firma(headers,id,imie,nazwiska,plec,e_mail,data_urodzenia,wiek,data_ro
 
 
     workbook.close()
-    print("Dokument został poprawnie zapisany w pliku Firma.xlsx")
+    print("Dokument został poprawnie zapisany w pliku Struktura_Korporacyjna.xlsx")
     print("W dokumencie znajdują się 2 arkusze tj. Pracownicy oraz Statystyki.")
 
 excel_firma(headers,id,imie,nazwiska,plec,e_mail,data_urodzenia,wiek,data_rozpoczęcia,staz_pracy,
