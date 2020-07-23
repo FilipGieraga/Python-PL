@@ -1,4 +1,4 @@
-# Program Struktura korporacji:
+# Program Struktura korporacji_p2:
 
 Wymagania: Python 3, pandas module, xlsxwriter module
 
