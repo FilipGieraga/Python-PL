@@ -21,5 +21,5 @@ przeciągnięcie formuły total dla naszej sumy o jedną w dół<br>
 kliknięcię na wykres kołowy oraz przęciagnięcie go o jedną komórkę w dół dla short name i value<br>
 użycie malarza formatów dla procentowych zmian<br>
 
-## The data is pulled from coinmarketcap.com using my private api key
+## Dane zaciągnięte z coinmarketcap.com używając mojego api klucza.
 
