@@ -1,9 +1,6 @@
 import random
 import datetime
 import json
-####
-from collections import OrderedDict
-from operator import getitem
 
 
 imiona_męskie = """Adam, Adolf, Adrian, Albert, Aleksander, Aleksy, Alfred, Amadeusz, Andrzej, Antoni, Arkadiusz, Arnold, Artur,
