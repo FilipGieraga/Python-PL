@@ -340,31 +340,7 @@ def html_to_pdf(df2):
         print("Coś poszło nie tak. Zainstaluj program wkhtmltopdf i sprawdź czy zmienna path_wkhtmltopdf do niego prowadzi")
 
 
-
 choice()
 df2, df2_m, df2_k= BMI()
-histograms(df2,df2_k,df2_m)
+histograms(df2, df2_m, df2_k)
 html_to_pdf(df2)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
