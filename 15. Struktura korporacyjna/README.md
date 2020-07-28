@@ -50,7 +50,7 @@ Bezpieczeństwem i zdrowiem, Treningiem i rozwojem, Relacjami z pracownikiem.<br
 Na końcu mamy zwykłych pracowników, którzy są rozdzieleni na poszczególne działy (poza HR) mniej więcej po równo.<br>
 Jeśli chodzi o określoną liczbę pracowników jaka może być stworzona, wynika ona z tego, że przy 700 pracownikach współczynnik wynosiłby 7 i nie byłoby już działu do wylosowania.
 Przy liczbie mniejszej niż 100, wsp. wynosiłby 0 i nie losowany byłby żaden dział. Poza tym mniej niż 100 pracowników, to bardziej firma niż korporacja.<br>
-Wszyscy pracownicy zostają zapisani w pliku **Pracownicy.json**
+Wszyscy pracownicy zostają zapisani w pliku **Pracownicy.json**<br>
 Program ten posiada część drugą.
 
 ![alt tag](https://github.com/FilipGieraga/Python-PL/blob/master/15.%20Struktura%20korporacyjna/Struktura.png)
