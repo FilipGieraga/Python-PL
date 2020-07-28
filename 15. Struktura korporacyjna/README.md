@@ -53,3 +53,4 @@ Przy liczbie mniejszej niż 100, wsp. wynosiłby 0 i nie losowany byłby żaden 
 Wszyscy pracownicy zostają zapisani w pliku **Pracownicy.json**
 Program ten posiada część drugą.
 
+![alt tag](https://github.com/FilipGieraga/Python-PL/blob/master/15.%20Struktura%20korporacyjna/Struktura.png)
