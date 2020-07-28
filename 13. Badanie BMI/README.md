@@ -37,8 +37,7 @@ przedziału 168-192, a waga 58-140. W przypadku kobiet wzrost to liczba losowa z
 kliniczna). Zrobić statystykę w poszczególnych grupach z podziałem na kobiety i mężczyzn.
 5. Zrobić histogram BMI w podziale na kobiety i mężczyźni
 6. Zrobić histogramu BMI w podziale na kobiety i mężczyźni w przedziałach wiekowych 18-35, 46-65, powyżej 65.
-7. Znaleźć średni, maksymalny i mnimalny indeks BMI w grupie kobiet i mężczyzn, oraz wszystkich uczestniówk, którzy z 5% odchyleniem należą do tych
-trze grup (osobno dla kobiet i mężczyzn)
+7. Znaleźć średni, maksymalny i mnimalny indeks BMI w grupie kobiet i mężczyzn.
 8. Zrobić wykres średniego BMI (kobiety i mężczyźni) w poszczegóonych województwach.
 9. Wyniki uzyskane w analizie umieścić w pliku pdf.<br><br>
 
