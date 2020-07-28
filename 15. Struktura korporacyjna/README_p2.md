@@ -24,6 +24,6 @@ W arkuszu statystyka znajdziemy informacje tj.:
 - Średnie zarobki kobiet i mężczyzn na najniższych stanowiskach
 
 <br>
-Stworzony zostaje również wykres kolunowy pokazujący średnią i medianę zarobków miesięcznych na każdym stanowisku.
+Stworzony zostaje również wykres kolumnowy pokazujący średnią i medianę zarobków miesięcznych na każdym stanowisku.
 
 ## Program tak naprawdę wyświetla nam jedynie komunikat, że plik excel został zapisany w ścieżce w której się znajduje.
