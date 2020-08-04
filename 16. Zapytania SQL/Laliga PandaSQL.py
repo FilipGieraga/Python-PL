@@ -1,60 +1,54 @@
 import pandas as pd
 import pandasql as pdsql
 
+df = pd.read_csv("Laliga.csv")
 
+headersdf = list(df.columns.values)
 
-df=pd.read_csv("Laliga.csv")
+data = df[["Team", "Position", "Shirt number", "Name", "Passes", "Yellow Cards", "Red Cards", "Goals scored",
+           "Penalties scored",
+           "Successful tackles", "Shots", "Shots on target", "Goals scored per attempt", "Assists", "Games played",
+           "Minutes played"]]
 
-headersdf=list(df.columns.values)
+data.columns = ["Team", "Position", "Shirt_number", "Name", "Passes", "Yellow_Cards", "Red_Cards", "Goals_scored",
+                "Penalties_scored", "Successful_tackles", "Shots", "Shots_on_target", "Goals_scored_per_attempt",
+                "Assists", "Games_played", "Minutes_played"]
 
-data=df[["Team","Position","Shirt number","Name","Passes","Yellow Cards","Red Cards","Goals scored","Penalties scored",
-         "Successful tackles","Shots","Shots on target","Goals scored per attempt","Assists","Games played","Minutes played"]]
-
-data.columns=["Team", "Position", "Shirt_number", "Name", "Passes", "Yellow_Cards", "Red_Cards", "Goals_scored",
-              "Penalties_scored", "Successful_tackles", "Shots", "Shots_on_target", "Goals_scored_per_attempt",
-              "Assists", "Games_played", "Minutes_played"]
-
-
-data.set_index("Name",inplace=True)
-
+data.set_index("Name", inplace=True)
 
 pd.set_option('display.max_rows', 500)
 pd.set_option('display.max_columns', 500)
 pd.set_option('display.width', 1000)
 
+
 def sql_df(query):
-    return pdsql.sqldf(query,globals())
+    return pdsql.sqldf(query, globals())
 
 
-q1="""Select Name, Team, Shirt_number from data order by Position limit 100"""
+q1 = """Select Name, Team, Shirt_number from data order by Position limit 100"""
 
-
-q3="""SELECT Team, sum(Goals_scored) as Team_Goals from data 
+q3 = """SELECT Team, sum(Goals_scored) as Team_Goals from data 
                                group by Team 
                                order by Team_Goals desc
                                """
 
-q5="""SELECT Name, Team, Yellow_Cards as Yellow from data 
+q5 = """SELECT Name, Team, Yellow_Cards as Yellow from data 
                         order by Yellow desc limit 5"""
 
-
-q6="""SELECT Name, Team, Red_Cards as RED from data 
+q6 = """SELECT Name, Team, Red_Cards as RED from data 
                         order by RED desc limit 10"""
 
-
-q7="""SELECT Team, avg(Goals_scored) as Avereage_goals_by_team from data 
+q7 = """SELECT Team, avg(Goals_scored) as Avereage_goals_by_team from data 
                         group by Team
                         order by Avereage_goals_by_team desc"""
 
-
-q8="""SELECT Position, Team, avg(Goals_scored) as Average_Goals_per_Position from data 
+q8 = """SELECT Position, Team, avg(Goals_scored) as Average_Goals_per_Position from data 
                                     where Position!='Goalkeeper'
                                     group by Position, Team
                                     order by Team,Average_Goals_per_Position desc
                                     """
 
-
-q11="SELECT Name, Shirt_number, Team from data where Shirt_number IS NULL"
+q11 = "SELECT Name, Shirt_number, Team from data where Shirt_number IS NULL"
 
 
 def queries():
@@ -66,83 +60,77 @@ def queries():
     print("6-Pokazuje kto miał najwięcej czerwonych kartek w sezonie, limit 10.")
     print("7-Pokazuje średnia strzelonych bramek przez każdą drużynę, jest to liczba bramek drużyny podzielona "
           "przez liczbę zawodników.")
-    print("8-Grupuje zawodników i pozycje i zwraca śrędnią goli na danej pozycji w danej drużynie, bramkarz nie uwzględniony.")
+    print(
+        "8-Grupuje zawodników i pozycje i zwraca śrędnią goli na danej pozycji w danej drużynie, bramkarz nie uwzględniony.")
     print("9-Modyfikacja powyższego zapytania, gdzie możemy określić konkretną drużynę.")
     print("10-Grupuje zawodników i pozycje i zwraca największą liczbę goli strzeolną przez zawodnika"
           "na każdej pozycji w podanej drużynie, bramkarz nie uwzględniony.")
     print("11-Drukuje zawodników nie posiadających nr. koszulki.")
     print("'end' albo dowolny string - kończy program.")
-    choice1=input("Choose query:\n")
-    if choice1=="1":
+    choice1 = input("Choose query:\n")
+    if choice1 == "1":
         print("1-Testowe zapytanie")
         print(sql_df(q1))
         input("Press Enter to continue...")
         queries()
 
-
-    elif choice1=="2":
+    elif choice1 == "2":
         print("2-Pozwala wybrać pozycję i sprawdzić kto strzelić równo albo więcej goli.")
         print(f"Positions: {data['Position'].unique()[1:]}")
         position_q2 = input("Wprowadź pozycję:\n")
         goals_scored_q2 = input("Ile goli?\n")
         q2 = "SELECT Name, Team ,Position, Goals_scored as Goals from data " \
-                                "where Position='" + position_q2 + "'" \
-                                "and Goals_scored >=" + goals_scored_q2 + " " \
-                                "order by Goals desc"
+             "where Position='" + position_q2 + "'" \
+                                                "and Goals_scored >=" + goals_scored_q2 + " " \
+                                                                                          "order by Goals desc"
         print(sql_df(q2))
         input("Press Enter to continue...")
         queries()
 
-
-    elif choice1=="3":
+    elif choice1 == "3":
         print("3-Sumuje gole strzelone przez każdą drużynę w Lalidze malejąco.")
         print(sql_df(q3))
         input("Press Enter to continue...")
         queries()
 
-
-    elif choice1=="4":
+    elif choice1 == "4":
         print("4-Pokazuje liczbę goli strzelonych przez zawodników w podanej drużynie malejąco.")
         print(f"Teams: {data['Team'].unique()}")
         team_q4 = input("Wprowadź nazwę drużyny:\n")
         q4 = "SELECT Name, Position, Goals_scored as Goals from data" \
-                                        " where Team='" + team_q4 + "' " \
-                                        "order by Goals desc"
+             " where Team='" + team_q4 + "' " \
+                                         "order by Goals desc"
         print(sql_df(q4))
         input("Press Enter to continue...")
         queries()
 
-
-    elif choice1=="5":
+    elif choice1 == "5":
         print("5-Pokazuje kto miał najwięcej żółtych kartek w sezonie, limit 5.")
         print(sql_df(q5))
         input("Press Enter to continue...")
         queries()
 
-
-    elif choice1=="6":
+    elif choice1 == "6":
         print("6-Pokazuje kto miał najwięcej czerwonych kartek w sezonie, limit 10.")
         print(sql_df(q6))
         input("Press Enter to continue...")
         queries()
 
-
-    elif choice1=="7":
+    elif choice1 == "7":
         print("7-Pokazuje średnia strzelonych bramek przez każdą drużynę, jest to liczba bramek drużyny podzielona "
-          "przez liczbę zawodników.")
+              "przez liczbę zawodników.")
         print(sql_df(q7))
         input("Press Enter to continue...")
         queries()
 
-
-    elif choice1=="8":
-        print("8-Grupuje zawodników i pozycje i zwraca śrędnią goli na danej pozycji w danej drużynie, bramkarz nie uwzględniony.")
+    elif choice1 == "8":
+        print(
+            "8-Grupuje zawodników i pozycje i zwraca śrędnią goli na danej pozycji w danej drużynie, bramkarz nie uwzględniony.")
         print(sql_df(q8))
         input("Press Enter to continue...")
         queries()
 
-
-    elif choice1=="9":
+    elif choice1 == "9":
         print("9-Modyfikacja powyższego zapytania, gdzie możemy określić konkretną drużynę.")
         print(f"Teams: {data['Team'].unique()}")
         team_q9 = input("Wprowadź nazwę drużyny:\n")
@@ -154,10 +142,9 @@ def queries():
         input("Press Enter to continue...")
         queries()
 
-
-    elif choice1=="10":
+    elif choice1 == "10":
         print("10-Grupuje zawodników i pozycje i zwraca największą liczbę goli strzeolną przez zawodnika"
-          "na każdej pozycji w podanej drużynie, bramkarz nie uwzględniony.")
+              "na każdej pozycji w podanej drużynie, bramkarz nie uwzględniony.")
         print(f"Teams: {data['Team'].unique()}")
         team_q10 = input("Wprowadź nazwę drużyny:\n")
         q10 = "SELECT Name, Position, Team, max(Goals_scored) as Most_Goals_per_Position from data " \
@@ -168,18 +155,13 @@ def queries():
         input("Press Enter to continue...")
         queries()
 
-
-    elif choice1=="11":
+    elif choice1 == "11":
         print("11-Drukuje zawodników nie posiadających nr. koszulki.")
         print(sql_df(q11))
         input("Press Enter to continue...")
         queries()
 
-
     else:
         print("Koniec")
 
 queries()
-
-
-
