@@ -39,4 +39,6 @@
 - generating data to new files
 - working with different file types like json, csv, xlsx
 - web scraping
--
+- using a variety of modules to achieve tangible results
+- drawing graphs and histograms
+- manipulate and select data using pandas and pandasql module
