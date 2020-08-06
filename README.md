@@ -43,7 +43,7 @@
 - working with dictionaries
 - exception handling
 - generating data to new files
-- working with different file types like json, csv, xlsx
+- working with different types of files like json, csv, xlsx
 - web scraping
 - using a variety of modules to achieve tangible results
 - drawing graphs and histograms
