@@ -1,11 +1,9 @@
 ### Hi there, I'm Filip 👋
 
 ## I aspire to become a Python Developer
-- 🔭 I’m currently working on a [VS Code Course][website]!
-- 🌱 I’m currently learning everything 🤣
-- 👯 I’m looking to collaborate with other content creators
-- 🥅 2020 Goals: Find a job in developement
-- ⚡ Fun fact: I love to draw and play guitar / drums
+- 🔭 I’m currently working on Django Framework!
+- 🥅 2020 Goals: Find a Python related job
+- ⚡ I love doing new things and exploring new places
 
 ### Connect with me:
 
@@ -29,15 +27,11 @@
 <br />
 
 
-<img align="left" alt="codeSTACKr's Github Stats" src="https://github-readme-stats.vercel.app/api?username=codeSTACKr&show_icons=true&hide_border=true" />
-
 [website]: https://filipgieraga.github.io/
-[linkedin]: https://linkedin.com/in/codeSTACKr
+[linkedin]: https://www.linkedin.com/in/filip-gieraga/
 
 
-
-# Overview of what I've already learned:
-
+### What I've already learned in Python:
 - if and while loops
 - tuples, lists, sets
 - dictioraries
