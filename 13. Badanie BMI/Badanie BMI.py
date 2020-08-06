@@ -193,10 +193,10 @@ def BMI():
     pd.set_option('display.max_columns', None)
     pd.set_option('display.max_rows', None)
     pd.set_option('display.width', 1000)
-    df2.loc[df2["BMI"].between(0, 18.49), ["Komentarz"]] = ["Niedowaga"]
-    df2.loc[df2["BMI"].between(18.5, 24.99), ["Komentarz"]] = ["Waga prawidłowa"]
-    df2.loc[df2["BMI"].between(25, 29.99), ["Komentarz"]] = ["Nadwaga"]
-    df2.loc[df2["BMI"].between(30, 60), ["Komentarz"]] = ["Otyłość kliniczna"]
+    df2.loc[df2.BMI.between(0, 18.49), ["Komentarz"]] = ["Niedowaga"]
+    df2.loc[df2.BMI.between(18.5, 24.99), ["Komentarz"]] = ["Waga prawidłowa"]
+    df2.loc[df2.BMI.between(25, 29.99), ["Komentarz"]] = ["Nadwaga"]
+    df2.loc[df2.BMI.between(30, 60), ["Komentarz"]] = ["Otyłość kliniczna"]
     df1 = pd.read_csv("uczestnicy.csv", engine='python')
     df2["Płeć"] = df1["Płeć"].values
     df2["Województwo"] = df1["Województwo"].values
@@ -218,7 +218,7 @@ def histograms(df2, df2_m, df2_k):
     plt.ylabel("liczba osób")
     plt.tight_layout()
     plt.savefig("Histogram1.png")
-    plt.show(BMI_m)
+    plt.show()
 
     # Histogram dla kobiet
     BMI_k = plt.hist(df2_k.BMI, edgecolor="black")
@@ -228,7 +228,7 @@ def histograms(df2, df2_m, df2_k):
     plt.ylabel("liczba osób")
     plt.tight_layout()
     plt.savefig("Histogram2.png")
-    plt.show(BMI_k)
+    plt.show()
 
     df2_m1 = df2.loc[(df2["Płeć"].str.contains("M")) & (df2["Wiek"].between(18, 35))]
     # print(df2_m1.BMI)
@@ -242,7 +242,7 @@ def histograms(df2, df2_m, df2_k):
     plt.ylabel("liczba osób")
     plt.tight_layout()
     plt.savefig("Histogram3.png")
-    plt.show(BMI_mk1)
+    plt.show()
 
     df2_m2 = df2.loc[(df2["Płeć"].str.contains("M")) & (df2["Wiek"].between(46, 65))]
     # print(df2_m1.BMI)
@@ -256,7 +256,7 @@ def histograms(df2, df2_m, df2_k):
     plt.ylabel("liczba osób")
     plt.tight_layout()
     plt.savefig("Histogram4.png")
-    plt.show(BMI_mk2)
+    plt.show()
 
     df2_m3 = df2.loc[(df2["Płeć"].str.contains("M")) & (df2["Wiek"].between(66, 80))]
     # print(df2_m1.BMI)
@@ -270,7 +270,7 @@ def histograms(df2, df2_m, df2_k):
     plt.ylabel("liczba osób")
     plt.tight_layout()
     plt.savefig("Histogram5.png")
-    plt.show(BMI_mk3)
+    plt.show()
 
     # Grupowanie średniej względem województw
 
