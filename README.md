@@ -17,7 +17,6 @@
 <img align="left" width="22px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/OOjs_UI_icon_check.svg/1024px-OOjs_UI_icon_check.svg.png" />13. BMI Analysis   <br/>
 <img align="left" width="22px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/OOjs_UI_icon_check.svg/1024px-OOjs_UI_icon_check.svg.png" />10. Cryptocurrency API   <br/>
 
-<br>
 
 ### Languages and Tools I worked with:
 
