@@ -32,8 +32,11 @@
 
 
 ### What I've already learned in Python:
-- if and while loops
-- tuples, lists, sets
-- dictioraries
+- IF and WHILE loops
+- working with tuples, lists, sets
+- working with dictionaries
 - exception handling
-- working with different types of data
+- generating data to new files
+- working with different file types like json, csv, xlsx
+- web scraping
+-
