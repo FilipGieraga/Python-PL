@@ -41,4 +41,5 @@
 - web scraping
 - using a variety of modules to achieve tangible results
 - drawing graphs and histograms
-- manipulate and select data using pandas and pandasql module
+- manipulating and selecting data using pandas and pandasql module
+- Object-Oriented Programming
