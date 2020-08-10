@@ -4,6 +4,7 @@
 - 🔭 I’m currently working on Django Framework!
 - 🥅 2020 Goals: Find a Python related job
 - ⚡ I love doing new things and exploring new places
+- ⚡ Stranger things is my favourite show of all time
 
 ### Connect with me:
 
@@ -38,14 +39,14 @@
 
 
 ### What I've already learned in Python:
-- IF and WHILE loops
-- working with tuples, lists, sets
-- working with dictionaries
+- if and while loops
+- working with containers (i.e. tuples, lists, sets and dictionaries)
+- working with different data types  (i.e. numbers and strings)
 - exception handling
 - generating data to new files
-- working with different types of files like json, csv, xlsx
+- working with different types of files (i.e json, csv, xlsx)
 - web scraping
 - using a variety of modules to achieve tangible results
 - drawing graphs and histograms
-- manipulating and selecting data using pandas and pandasql module
+- manipulating and quering data using pandas and pandasql module
 - Object-Oriented Programming
