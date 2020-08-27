@@ -3,67 +3,109 @@ string1 = "abcdefghijklmnopqrstuvwxyzabc"
 string2 = " -.,"
 
 
-def choice():
-    choi = input("Czy chcesz spróbować jeszcze raz?(t/n)\n")
-    if choi == "t":
-        choi1 = input("Czy chcesz zaszyfrować wiadomość?(t/n)\n")
-        if choi1 == "t":
-            cipher(string, string1, string2)
+def wybor():
+    while True:
+        try:
+            decyzja = input("Czy chcesz spróbować jeszcze raz?(t/n)\n")
+            decyzja=decyzja.lower()
+            if decyzja not in "tn":
+                raise ValueError("Zła wartość decyzji.")
+        except Exception as error:
+            print(error)
         else:
-            decipher(string, string1, string2)
+            break
+
+
+    if decyzja == "t":
+        while True:
+            try:
+                decyzja_2 = input("Czy chcesz zaszyfrować wiadomość?(t/n)\n")
+                decyzja_2 = decyzja_2.lower()
+                if decyzja_2 not in "tn":
+                    raise ValueError("Zła wartość decyzji.")
+            except Exception as error:
+                print(error)
+            else:
+                break
+
+
+        if decyzja_2 == "t":
+            szyfruj(string, string1, string2)
+        else:
+            rozszyfruj(string, string1, string2)
     else:
         print("Dziękuje za skorzystanie z programu.")
 
 
-def cipher(string, string1, string2):
+def szyfruj(string, string1, string2):
     zdanie = input("Wprowadź zdanie do zaszyfrowania:\n")
-    p = input("Czy uwzględnić polskie znaki?(t/n)\n")
-    if p == "t":
-        p = string
+
+
+    while True:
+        try:
+            znaki = input("Czy uwzględnić polskie znaki?(t/n)\n")
+            znaki = znaki.lower()
+            if znaki not in "tn":
+                raise ValueError("Zła wartość decyzji.")
+        except Exception as error:
+            print(error)
+        else:
+            break
+
+
+    if znaki == "t":
+        znaki = string
     else:
-        p = string1
+        znaki = string1
     zdanie = zdanie.lower()
     nowe_zdanie = ""
-    cipher = []
     for element in zdanie:
-        if element in p:
-            x = p.find(element)
+        if element in znaki:
+            x = znaki.find(element)
             l = x + 3
-            cipher.append(l)
-            nowe_zdanie += p[l]
+            nowe_zdanie += znaki[l]
         elif element in string2:
-            cipher.append(element)
             nowe_zdanie += element
     nowe_zdanie = nowe_zdanie.upper()
     print(nowe_zdanie)
-    choice()
+    wybor()
 
 
-def decipher(string, string1, string2):
+def rozszyfruj(string, string1, string2):
     zdanie = input("Wprowadź zdanie do rozszyfrowania:\n")
-    p = input("Czy uwzględnić polskie znaki?(t/n)\n")
-    if p == "t":
-        p = string
+
+
+    while True:
+        try:
+            znaki = input("Czy uwzględnić polskie znaki?(t/n)\n")
+            znaki = znaki.lower()
+            if znaki not in "tn":
+                raise ValueError("Zła wartość decyzji.")
+        except Exception as error:
+            print(error)
+        else:
+            break
+
+
+    if znaki == "t":
+        znaki = string
     else:
-        p = string1
+        znaki = string1
     zdanie = zdanie.lower()
-    p = p[::-1]
-    print(p)
+    znaki = znaki[::-1]
     nowe_zdanie = ""
-    cipher = []
     for element in zdanie:
-        if element in p:
-            x = p.find(element)
+        if element in znaki:
+            x = znaki.find(element)
             l = x + 3
-            cipher.append(l)
-            nowe_zdanie += p[l]
+            nowe_zdanie += znaki[l]
         elif element in string2:
-            cipher.append(element)
             nowe_zdanie += element
     nowe_zdanie = nowe_zdanie.upper()
     print(nowe_zdanie)
-    choice()
+    wybor()
 
 
-cipher(string, string1, string2)
-# print(decipher(string,string1,string2))
+if __name__=='__main__':
+    szyfruj(string, string1, string2)
+
