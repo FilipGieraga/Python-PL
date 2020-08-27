@@ -9,18 +9,14 @@ def wisielec():
             x = haslo.split()
             y = [l for l in haslo]
             if len(x) > 1:
-                print("Hasło jest dłuższe niż jeden wyraz.")
-                raise ValueError
+                raise TypeError("Hasło jest dłuższe niż jeden wyraz.")
             if len(haslo) == 0:
-                print("Nie podałeś hasła.")
-                raise ValueError
+                raise ValueError("Nie podałeś hasła.")
             for i in y:
                 if i not in string.upper():
-                    print("Hasło posiada niedozwolone znaki.")
-                    print(f"Lista dozwolonych znaków: {string}")
-                    raise ValueError
-        except:
-            print("Spróbuj ponownie.")
+                    raise ValueError(f"Hasło posiada niedozwolone znaki.\nLista dozwolonych znaków: {string}")
+        except Exception as error:
+            print(f"Wystąpił bład: {error}\nSpróbuj ponownie.")
         else:
             break
 
@@ -72,14 +68,15 @@ def wisielec():
 
 
 def wybor():
-    choi = input("Czy chcesz spróbować jeszcze raz?(t/n)\n")
-    if choi == "t":
+    decyzja = input("Czy chcesz spróbować jeszcze raz?(t/n)\n")
+    if decyzja == "t":
         wisielec()
-    elif choi == "n":
+    elif decyzja == "n":
         print("Dziękuje za skorzystanie z programu.")
     else:
-        print(f"Jestem tylko komputerem i nie rozumiem polecenia {choi}")
+        print(f"Jestem tylko komputerem i nie rozumiem polecenia {decyzja}")
         wybor()
 
 
-wisielec()
+if __name__ == '__main__':
+    wisielec()
