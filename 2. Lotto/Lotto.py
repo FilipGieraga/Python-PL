@@ -10,15 +10,16 @@ def lotto():
                 try:
                     liczba = int(input(f"Podaj liczbę nr {i}:\n"))
                     if liczba not in range(1, 50) or liczba in twoj_los:
-                        raise ValueError
+                        raise ValueError("Powtórzenie liczby, bądź liczba poza zakresem.")
                     twoj_los.add(liczba)
                     if i < 6:
                         print(f"Podane dotychczas liczby to: {sorted(twoj_los)}")
                     else:
                         pass
-                except:
-                    print("Możliwe błedy:\nPodałeś liczbę poza zakresem <1,49>\nNie jest to liczba całkowita"
-                          "\nPodałeś już tą liczbę wcześniej")
+                except Exception as error:
+                    print(
+                        f"Treść błędu: {error}\nMożliwe błedy:\nPodałeś liczbę poza zakresem <1,49>\nNie jest to liczba całkowita"
+                        "\nPodałeś już tą liczbę wcześniej")
                     print(f"Podane dotychczas liczby to: {sorted(twoj_los)}")
                 else:
                     break
@@ -44,11 +45,11 @@ def lotto():
         try:
             x = int(input("Wpisz ilość trafień jaką chcesz uzyskać.\n"))
             if x not in range(1, 7):
-                raise ValueError
+                raise ValueError("Podałeś liczbę poza zakresem <1,6>, bądź to nie jest liczba całkowita")
             else:
                 pass
-        except:
-            print("Podałeś liczbę poza zakresem <1,6>, bądź to nie jest liczba całkowita")
+        except Exception as error:
+            print(error)
         else:
             break
 
@@ -61,15 +62,16 @@ def lotto():
         q += 1
     else:
         print(f"Trafiłeś za {q - 1}-tym razem, a wspólne liczby to {sorted(wspólne)}.")
-    choice()
+    wybor()
 
 
-def choice():
-    choi = input("Czy chcesz spróbować jeszcze raz?(t/n)\n")
-    if choi == "t":
+def wybor():
+    decyzja = input("Czy chcesz spróbować jeszcze raz?(t/n)\n")
+    if decyzja == "t":
         lotto()
     else:
         print("Dziękuje za skorzystanie z programu.")
 
 
-lotto()
+if __name__ == "__main__":
+    lotto()

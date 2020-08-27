@@ -1,41 +1,41 @@
-import time
 import datetime
 
 
-def choice():
-    choi = input("Czy chcesz spróbować jeszcze raz?(t/n)\n")
-    if choi == "t":
-        count_days()
+def wybor():
+    decyzja = input("Czy chcesz spróbować jeszcze raz?(t/n)\n")
+    if decyzja == "t":
+        licz()
     else:
         print("Dziękuje za skorzystanie z programu.")
 
 
-def count_days():
+def licz():
     while True:
         try:
-            a = int(input("W jakim dniu się urodziłeś?(1,31)\n"))
-            b = int(input("W jakim miesiącu?(1,12)\n"))
-            c = int(input("W którym roku?\n"))
-            birth = datetime.date(c, b, a)
-        except:
-            print(
-                "Zły format daty, proszę spróbuj jeszcze raz. \nProszę nie dodawać 0 z przodu w przypadku liczb od 1 do 9")
+            dzien = int(input("W jakim dniu się urodziłeś?(1,31)\n"))
+            miesiac = int(input("W jakim miesiącu?(1,12)\n"))
+            rok = int(input("W którym roku?\n"))
+            urodziny = datetime.date(rok, miesiac, dzien)
+        except Exception as error:
+            print(f"Wystąpił błąd: {error}\n"
+                  "Zły format daty, proszę spróbuj jeszcze raz. "
+                  "\nProszę nie dodawać 0 z przodu w przypadku liczb od 1 do 9")
         else:
             break
-    birth = datetime.date(c, b, a)
-    print(birth)
-    now = datetime.date.today()
-    delt = (now - birth)
-    if delt.days > 0:
-        print(f"Żyjesz dokladnie : {delt.days} dni, czyli {delt.days * 24} godzin.")
-        print(f"Czyli {delt.days * 24 * 60} minut.")
-    elif delt.days < 0:
+    urodziny = datetime.date(rok, miesiac, dzien)
+    dzisiaj = datetime.date.today()
+    delta = (dzisiaj - urodziny)
+    if delta.days > 0:
+        print(f"Żyjesz dokladnie : {delta.days} dni, czyli {delta.days * 24} godzin.")
+        print(f"Czyli {delta.days * 24 * 60} minut.")
+    elif delta.days < 0:
         print(
-            f"Jeśli urodziłbyś się dzisiaj, w podanym roku miałbyć dokładnie : {-delt.days} dni, czyli {-delt.days * 24} godzin.")
-        print(f"Czyli {-delt.days * 24 * 60} minut.")
+            f"Jeśli urodziłbyś się dzisiaj, w podanym roku miałbyć dokładnie : {-delta.days} dni, czyli {-delta.days * 24} godzin.")
+        print(f"Czyli {-delta.days * 24 * 60} minut.")
     else:
         print("Wpisałeś dzisiejszą datę.")
-    choice()
+    wybor()
 
 
-count_days()
+if __name__ == '__main__':
+    licz()
