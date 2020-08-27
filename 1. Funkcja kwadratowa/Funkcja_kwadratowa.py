@@ -1,23 +1,23 @@
 import math
 
 
-def choice():
+def wybor():
     choi = input("Czy chcesz spróbować jeszcze raz?(t/n)\n")
     if choi == "t":
-        parameters()
+        parametry()
     else:
         print("Dziękuje za skorzystanie z programu.")
 
 
-def parameters(a=0, b=0, c=0):
+def parametry(a=0, b=0, c=0):
     print("Funkcja kwadratowa o postaci ax**2+bx+c=0")
     while True:
         try:
             a = float(input("Wprowadź parametr a: \n"))
             b = float(input("Wprowadź parametr b: \n"))
             c = float(input("Wprowadź parametr c : \n"))
-        except:
-            print("Zła watość parametrów, proszę spróbować jeszcze raz")
+        except Exception as error:
+            print(f"Wystąpił błąd : {error} \nZła watość parametrów, proszę spróbować jeszcze raz")
         else:
             break
 
@@ -30,7 +30,7 @@ def parameters(a=0, b=0, c=0):
         else:
             p1 = c / (-b)
             print(f"Miejscem zerowym tej funkcji liniowej jest {round(p1, 2)}")
-        choice()
+        wybor()
     else:
         delta = b ** 2 - 4 * a * c
         d = [a, b, c, delta]
@@ -62,7 +62,8 @@ def m_zerowe(d):
         m2 = round(m2, 2)
         m3 = round(m3, 2)
         print(f"Funkcja posiada dwa miejsca zerowe, gdzie x1 = {m2}, a x2 = {m3} ")
-    choice()
+    wybor()
 
 
-parameters()
+if __name__ == "__main__":
+    parametry()
