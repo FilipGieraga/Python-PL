@@ -9,8 +9,6 @@ w = "dolnośląskie kujawsko-pomorskie lubelskie lubuskie łódzkie małopolskie
     świętokrzyskie warmińsko-mazurskie wielkopolskie zachodniopomorskie"
 
 w = w.split()
-# print(w)
-
 
 imiona_męskie = """Adam, Adolf, Adrian, Albert, Aleksander, Aleksy, Alfred, Amadeusz, Andrzej, Antoni, Arkadiusz, Arnold, Artur,
 Bartłomiej, Bartosz, Benedykt, Beniamin, Bernard, Błażej, Bogdan, Bogumił, Bogusław, Bolesław, Borys, Bronisław,
@@ -37,9 +35,6 @@ Zbigniew, Zdzisław, Zenon, Zygmunt"""
 
 imiona_męskie = imiona_męskie.replace('\n', ' ')
 imiona_męskie = imiona_męskie.split(", ")
-
-# print(imiona_męskie)
-# print(len(imiona_męskie))
 
 imiona_żeńskie = """Ada, Adela, Adelajda, Adrianna, Agata, Agnieszka, Aldona, Aleksandra, Alicja, Alina, Amanda, Amelia, Anastazja,
 Andżelika, Aneta, Anita, Anna, Antonina,
@@ -71,16 +66,6 @@ Zofia, Zuzanna, Zyta"""
 imiona_żeńskie = imiona_żeńskie.replace('\n', ' ')
 imiona_żeńskie = imiona_żeńskie.split(", ")
 
-# print(imiona_żeńskie)
-# print(len(imiona_żeńskie))
-
-# r=random.choice(imiona_męskie)
-# l=random.choice(imiona_żeńskie)
-# print(r,l)
-
-# l1=random.randint(1,10)
-# print(l1)
-
 nazwiska = """
  Nowak Kowalski Wiśniewski Wójcik Kowalczyk Kamiński Lewandowski Zieliński Szymański Woźniak Dąbrowski\
  Kozłowski  Jankowski  Mazur  Wojciechowski  Kwiatkowski  Krawczyk  Kaczmarek  Piotrowski  Grabowski\
@@ -102,13 +87,10 @@ nazwiska = """
  Bukowski Matusiak Sroka Kosiński Kędzierski Skowroński Marcinkowski"""
 
 nazwiska = nazwiska.split()
-# print(nazwiska)
 
-# waga mezczyzn i wzrost
 waga_m = random.randint(58, 140)
 wzrost_m = random.randint(168, 192)
 
-# waga kobiet i wzrost
 waga_k = random.randint(42, 110)
 wzrost_k = random.randint(156, 178)
 
@@ -231,9 +213,7 @@ def histograms(df2, df2_m, df2_k):
     plt.show()
 
     df2_m1 = df2.loc[(df2["Płeć"].str.contains("M")) & (df2["Wiek"].between(18, 35))]
-    # print(df2_m1.BMI)
     df2_k1 = df2.loc[(df2["Płeć"].str.contains("K")) & (df2["Wiek"].between(18, 35))]
-    # print(df2_k1)
     BMI_mk1 = plt.hist(df2_k1.BMI, edgecolor="blue", bins=5, color="red", alpha=0.5, label="Kobiety")
     BMI_mk1 = plt.hist(df2_m1.BMI, edgecolor="red", bins=5, color="blue", alpha=0.5, label="Mężczyźni")
     plt.legend(loc='upper right')
@@ -245,9 +225,7 @@ def histograms(df2, df2_m, df2_k):
     plt.show()
 
     df2_m2 = df2.loc[(df2["Płeć"].str.contains("M")) & (df2["Wiek"].between(46, 65))]
-    # print(df2_m1.BMI)
     df2_k2 = df2.loc[(df2["Płeć"].str.contains("K")) & (df2["Wiek"].between(46, 65))]
-    # print(df2_k1)
     BMI_mk2 = plt.hist(df2_k2.BMI, edgecolor="blue", bins=5, color="red", alpha=0.5, label="Kobiety")
     BMI_mk2 = plt.hist(df2_m2.BMI, edgecolor="red", bins=5, color="blue", alpha=0.5, label="Mężczyźni")
     plt.legend(loc='upper right')
@@ -259,9 +237,7 @@ def histograms(df2, df2_m, df2_k):
     plt.show()
 
     df2_m3 = df2.loc[(df2["Płeć"].str.contains("M")) & (df2["Wiek"].between(66, 80))]
-    # print(df2_m1.BMI)
     df2_k3 = df2.loc[(df2["Płeć"].str.contains("K")) & (df2["Wiek"].between(46, 80))]
-    # print(df2_k1)
     BMI_mk3 = plt.hist(df2_k3.BMI, edgecolor="blue", bins=5, color="red", alpha=0.5, label="Kobiety")
     BMI_mk3 = plt.hist(df2_m3.BMI, edgecolor="red", bins=5, color="blue", alpha=0.5, label="Mężczyźni")
     plt.legend(loc='upper right')
@@ -275,9 +251,7 @@ def histograms(df2, df2_m, df2_k):
     # Grupowanie średniej względem województw
 
     w_m = df2_m.groupby("Województwo")["BMI"].mean()
-    # print(w_m)
     w_k = df2_k.groupby("Województwo")["BMI"].mean()
-    # print(w_k)
 
     w_m.plot(kind='bar', title="Mężczyźni", x='BMI', y='Województwo')
     plt.subplots_adjust(bottom=0.44)
@@ -290,12 +264,12 @@ def histograms(df2, df2_m, df2_k):
     plt.show()
 
     print("\n\n")
-    s1 = (f"Najwyższe BMI w grupie mężczyzn to: {df2_m.BMI.max()}")
-    s2 = (f"Najwyższe BMI w grupie kobiet to: {df2_k.BMI.max()}")
-    s3 = (f"Średnie BMI w grupie mężczyzn to: {df2_m.BMI.mean()}")
-    s4 = (f"Średnie BMI w grupie kobiet to: {df2_k.BMI.mean()}")
-    s5 = (f"Najniższe BMI w grupie mężczyzn to: {df2_m.BMI.min()}")
-    s6 = (f"Najniższe BMI w grupie kobiet to: {df2_k.BMI.min()}")
+    s1 = f"Najwyższe BMI w grupie mężczyzn to: {df2_m.BMI.max()}"
+    s2 = f"Najwyższe BMI w grupie kobiet to: {df2_k.BMI.max()}"
+    s3 = f"Średnie BMI w grupie mężczyzn to: {df2_m.BMI.mean()}"
+    s4 = f"Średnie BMI w grupie kobiet to: {df2_k.BMI.mean()}"
+    s5 = f"Najniższe BMI w grupie mężczyzn to: {df2_m.BMI.min()}"
+    s6 = f"Najniższe BMI w grupie kobiet to: {df2_k.BMI.min()}"
     print(s1)
     print(s2)
     print(s3)
@@ -306,34 +280,35 @@ def histograms(df2, df2_m, df2_k):
 
 
 def html_to_pdf(df2):
+    df2.to_html("Podsumowanie.html")
+    path_wkhtmltopdf = r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe'
+    options = {
+        'page-size': 'Letter',
+        'margin-top': '0.75in',
+        'margin-right': '0.75in',
+        'margin-bottom': '0.75in',
+        'margin-left': '0.75in',
+        'encoding': "UTF-8",
+        'custom-header': [
+            ('Accept-Encoding', 'gzip')
+        ],
+        'cookie': [
+            ('cookie-name1', 'cookie-value1'),
+            ('cookie-name2', 'cookie-value2'),
+        ],
+        'outline-depth': 10,
+    }
     try:
-        print("Tworzenie podsumowania w pdf")
-        html = df2.to_html("Podsumowanie.html")
-        path_wkhtmltopdf = r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe'
         config = pdfkit.configuration(wkhtmltopdf=path_wkhtmltopdf)
-        options = {
-            'page-size': 'Letter',
-            'margin-top': '0.75in',
-            'margin-right': '0.75in',
-            'margin-bottom': '0.75in',
-            'margin-left': '0.75in',
-            'encoding': "UTF-8",
-            'custom-header': [
-                ('Accept-Encoding', 'gzip')
-            ],
-            'cookie': [
-                ('cookie-name1', 'cookie-value1'),
-                ('cookie-name2', 'cookie-value2'),
-            ],
-            'outline-depth': 10,
-        }
         pdfkit.from_file("Podsumowanie.html", "Podsumowanie.pdf", configuration=config, options=options)
-    except:
+    except Exception as e:
         print(
-            "Coś poszło nie tak. Zainstaluj program wkhtmltopdf i sprawdź czy zmienna path_wkhtmltopdf do niego prowadzi")
+            "Coś poszło nie tak. Zainstaluj program wkhtmltopdf i sprawdź czy zmienna path_wkhtmltopdf do "
+            f"niego prowadzi. \nTreść błędu : {e}")
 
 
-choice()
-df2, df2_m, df2_k = BMI()
-histograms(df2, df2_m, df2_k)
-html_to_pdf(df2)
+if __name__ == '__main__':
+    choice()
+    df2, df2_m, df2_k = BMI()
+    histograms(df2, df2_m, df2_k)
+    html_to_pdf(df2)
