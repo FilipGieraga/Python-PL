@@ -166,7 +166,6 @@ def firma_struktura(firma, nazwa_firmy):
         list_staz += ([v["Staż pracy(w dniach)"]])
         list_klucze += [k]
 
-    # ======= wazne
     wspolczynnik = len(firma) / 100
     wspolczynnik = int(wspolczynnik)
 
@@ -206,13 +205,8 @@ def firma_struktura(firma, nazwa_firmy):
                 zarobki = round(zarobki, -1)
             firma[klucz_2]["Zarobki roczne"] = str(zarobki) + " zł"
             firma[klucz_2]["Zarobki miesięczne"] = str(int(zarobki / 12)) + " zł"
-            # print(list_klucze)
-            # print(list_staz)
             list_klucze.pop(klucz_1)
             list_staz.pop(klucz_1)
-            # print(list_klucze)
-            # print(list_staz)
-            # print(klucz_1,klucz_2)
             increment1 = i
 
 
@@ -220,7 +214,6 @@ def firma_struktura(firma, nazwa_firmy):
             klucz_1 = list_staz.index(max(list_staz))
             klucz_2 = list_klucze[klucz_1]
             firma[klucz_2]["Stanowisko"] = 'President'
-            ### Oddział
             firma[klucz_2]["Dział"] = wykorzystane_dzialy1.pop()
             if wspolczynnik == 1:
                 zarobki = random.randint(150000, 175000)
@@ -251,7 +244,6 @@ def firma_struktura(firma, nazwa_firmy):
             klucz_1 = list_staz.index(max(list_staz))
             klucz_2 = list_klucze[klucz_1]
             firma[klucz_2]["Stanowisko"] = 'Vice-President'
-            ### Oddział
             if len(wykorzystane_dzialy1) == 0:
                 wykorzystane_dzialy1 = wykorzystane_dzialy.copy()
             firma[klucz_2]["Dział"] = wykorzystane_dzialy1.pop()
@@ -284,7 +276,6 @@ def firma_struktura(firma, nazwa_firmy):
             klucz_1 = list_staz.index(max(list_staz))
             klucz_2 = list_klucze[klucz_1]
             firma[klucz_2]["Stanowisko"] = 'Menadżer'
-            ### Oddział
             if len(wykorzystane_dzialy1) == 0:
                 wykorzystane_dzialy1 = wykorzystane_dzialy.copy()
             firma[klucz_2]["Dział"] = wykorzystane_dzialy1.pop()
@@ -317,7 +308,6 @@ def firma_struktura(firma, nazwa_firmy):
             klucz_1 = list_staz.index(max(list_staz))
             klucz_2 = list_klucze[klucz_1]
             firma[klucz_2]["Stanowisko"] = 'Supervisor'
-            ### Oddział
             if len(wykorzystane_dzialy1) == 0:
                 wykorzystane_dzialy1 = wykorzystane_dzialy.copy()
             firma[klucz_2]["Dział"] = wykorzystane_dzialy1.pop()
@@ -357,7 +347,6 @@ def firma_struktura(firma, nazwa_firmy):
                 kierownik += 1
             else:
                 firma[klucz_2]["Stanowisko"] = stanowiska_hr1.pop(0)
-            ### Oddział
             firma[klucz_2]["Dział"] = dzialy[-1]
             if wspolczynnik == 1 and firma[klucz_2]["Stanowisko"] == 'Kierownik':
                 zarobki = random.randint(70000, 95000)
@@ -433,9 +422,10 @@ def to_json(firma):
     print("Dane załadowano do pliku .json .")
 
 
-liczba_pracowników = 500
-nazwa_firmy = "Google"
-firma = pracownicy(liczba_pracowników, nazwa_firmy)
-firma = firma_struktura(firma, nazwa_firmy)
-drukuj_pracowników(firma)
-to_json(firma)
+if __name__ == "__main__":
+    liczba_pracowników = 500
+    nazwa_firmy = "Google"
+    firma = pracownicy(liczba_pracowników, nazwa_firmy)
+    firma = firma_struktura(firma, nazwa_firmy)
+    drukuj_pracowników(firma)
+    to_json(firma)

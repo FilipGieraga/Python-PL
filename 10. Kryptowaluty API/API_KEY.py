@@ -2,11 +2,17 @@ import json
 from requests import Request, Session
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
 import xlsxwriter
+from configparser import ConfigParser
+
+file = 'config.ini'
+config = ConfigParser()
+config.read(file)
 
 
 def input_data():
     print("Disclaimer 1: Proszę podać pełną nazwę kryptowaluty np. bitcoin i wcisnąć enter")
     print('Disclaimer 2: Aby zatrzymać pętlę wpisz "end".')
+    print('Disclaimer 3: Jeśli coin ma spację w nazwie proszę użyć -. Przykład : Binance Coin = binance-coin')
     coin_names = []
     coin_name = ''
     while coin_name != "end":
@@ -21,14 +27,14 @@ def input_data():
 
 
 def API_information(coins):
-    url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest'
+    url = config['path']['url']
     parameters = {
         'slug': coins
 
     }
     headers = {
         'Accepts': 'application/json',
-        'X-CMC_PRO_API_KEY': '8f92b739-35b5-4617-8c0b-f0db4398ed0a',
+        'X-CMC_PRO_API_KEY': config['path']['api_key'],
     }
 
     session = Session()
@@ -37,8 +43,6 @@ def API_information(coins):
     try:
         response = session.get(url, params=parameters)
         data = json.loads(response.text)
-        # with open("cryptodata.json", "w") as outfile:
-        #     json.dump(data, outfile, indent=2)
         coins_id = []
         coin_full_names = []
         coin_short_names = []
@@ -92,19 +96,15 @@ def quan(coin_full_names):
 
 
 def excel_file(quantities, coin_full_names, coin_short_names, prices, changes_1h, changes_24h, changes_7d):
-    # Create a workbook and add a worksheet.
-    workbook = xlsxwriter.Workbook('CryptoPortfolio.xlsx')
+    workbook = xlsxwriter.Workbook(str(config['name']['file']))
     worksheet = workbook.add_worksheet(name="PORTFOLIO")
 
-    # Some data we want to write to the worksheet.
     main_headlines = ["Nazwa", "Krótka nazwa", "Ilość", "Cena($)", "Wartość($)", "1H zmiana", "24H zmiana", "7D zmiana"]
     cell_format = workbook.add_format({'bold': True})
 
-    # Start from the first cell. Rows and columns are zero indexed.
     row = 0
     col = 0
 
-    # Iterate over the data and write it out row by row.
     for head in (main_headlines):
         worksheet.write(row, col, head, cell_format)
         col += 1
@@ -167,27 +167,21 @@ def excel_file(quantities, coin_full_names, coin_short_names, prices, changes_1h
 
     worksheet.conditional_format('F2:H' + str(row) + '', {'type': '3_color_scale'})
 
-    # Write a total using a formula.
     worksheet.write(row, 5, 'Total', cell_format)
     worksheet.write(row, 4, '=SUM(E1:E' + str(row) + ')')
 
-    # PIECHART
     chart1 = workbook.add_chart({'type': 'pie'})
 
-    # Configure the series. Note the use of the list syntax to define ranges:
     chart1.add_series({
         'name': 'Wartości kryptowalut',
         'categories': ['PORTFOLIO', 1, 1, len(coin_short_names), 1],
         'values': ['PORTFOLIO', 1, 4, len(coin_short_names), 4],
     })
 
-    # Add a title.
     chart1.set_title({'name': 'Wartości kryptowalut'})
 
-    # Set an Excel chart style. Colors with white outline and shadow.
     chart1.set_style(10)
 
-    # Insert the chart into the worksheet (with an offset).
     worksheet.insert_chart('J' + str(row + 2) + '', chart1, {'x_offset': 25, 'y_offset': 10})
 
     workbook.close()

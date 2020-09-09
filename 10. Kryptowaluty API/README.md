@@ -16,3 +16,4 @@ posiadanej waluty jako liczby całkowitej(np. 5) albo dziesiętnej(np. 0.4)
 
 ## Dane są zaciągane ze strony coinmarketcap.com za pomocą mojego prywatnego api klucza
 
+## Jeśli coin ma spację w nazwie proszę użyć -. Przykład : Binance Coin = binance-coin

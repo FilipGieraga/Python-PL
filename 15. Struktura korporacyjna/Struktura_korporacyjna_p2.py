@@ -15,7 +15,6 @@ df["Stanowisko"] = pd.Categorical(df["Stanowisko"], ["CEO", "President", "Vice-P
 df = df.sort_values("Stanowisko")
 
 headers = list(df.columns.values)
-# print(headers)
 id = df.index
 imie = df["Imię"]
 nazwiska = df["Nazwisko"]
@@ -34,10 +33,6 @@ zar_roczne = df["Zarobki roczne"].map(lambda x: x.strip(" zł"))
 zar_roczne = pd.to_numeric(zar_roczne)
 
 
-# print(dzial)
-# print(df.head(20))
-
-
 def srednia_na_stanowsiko(df):
     if df["Zarobki miesięczne"].dtype != "int64":
         df["Zarobki miesięczne"] = df["Zarobki miesięczne"].map(lambda x: x.strip(" zł"))
@@ -50,16 +45,12 @@ def srednia_na_stanowsiko(df):
     nazwa1 = "Średnie zarobki miesięczne(w zł):"
     dane1 = []
     etykiety1 = []
-    # print(zarobki_grouped)
     for stanowisko in zarobki_grouped:
         dane1.append(stanowisko)
     for index in zarobki_grouped.index:
         etykiety1.append(index)
 
     return dane1, etykiety1, nazwa1
-
-
-# dane1,etykiety1,nazwa1=srednia_na_stanowsiko(df)
 
 
 def mediana_na_stanowsiko(df):
@@ -82,9 +73,6 @@ def mediana_na_stanowsiko(df):
     return dane2, nazwa2
 
 
-# dane2,nazwa2=mediana_na_stanowsiko(df)
-
-
 def srednia_wieku(df):
     df["Wiek"] = pd.to_numeric(df["Wiek"])
     wiek_grouped = df.groupby("Stanowisko")["Wiek"].mean()
@@ -98,11 +86,8 @@ def srednia_wieku(df):
         dane3.append(stanowisko)
     for index in wiek_grouped.index:
         etykiety3.append(index)
-    # print(dane3,etykiety3)
+
     return dane3, nazwa3
-
-
-# dane3,nazwa3 = srednia_wieku(df)
 
 
 def pracownicy_na_stanowisku(df):
@@ -119,9 +104,6 @@ def pracownicy_na_stanowisku(df):
     return dane4, nazwa4
 
 
-# dane4,nazwa4 = pracownicy_na_stanowisku(df)
-
-
 def pracownicy_w_dziale(df):
     df["Licznik"] = 1
     dzial_grouped = df.groupby(["Dział"]).count()["Licznik"]
@@ -136,9 +118,6 @@ def pracownicy_w_dziale(df):
     return dane5, etykiety5, nazwa5
 
 
-# dane5,etykiety5,nazwa5=pracownicy_w_dziale(df)
-
-
 def k_i_m_licznik(df):
     df["Licznik"] = 1
     k_i_m = df.groupby(["Płeć"]).count()["Licznik"]
@@ -150,9 +129,6 @@ def k_i_m_licznik(df):
     for index in k_i_m.index:
         etykiety6.append(index)
     return dane6, etykiety6, nazwa6
-
-
-# dane6,etykiety6,nazwa6 = k_i_m_licznik(df)
 
 
 def zarobki_zw_pracowników(df):
@@ -170,19 +146,6 @@ def zarobki_zw_pracowników(df):
     for index in zwykli_p.index:
         etykiety7.append(index)
     return dane7, nazwa7
-
-
-# dane7,nazwa7=zarobki_zw_pracowników(df)
-
-
-# def zarobki_supervisorow(df):
-#     if df["Zarobki roczne"].dtype!="int64":
-#         df["Zarobki roczne"] = df["Zarobki roczne"].map(lambda x: x.strip(" zł"))
-#         df["Zarobki roczne"]= pd.to_numeric(df["Zarobki roczne"])
-#     zwykli_p=df.loc[df["Stanowisko"].str.contains("Superv")]
-#     zwykli_p=zwykli_p.groupby(["Płeć"])["Zarobki roczne"].mean()
-#     zwykli_p=zwykli_p.round(0)
-#     print(zwykli_p)
 
 
 def excel_firma(headers, id, imie, nazwiska, plec, e_mail, data_urodzenia, wiek, data_rozpoczęcia, staz_pracy,
@@ -222,8 +185,6 @@ def excel_firma(headers, id, imie, nazwiska, plec, e_mail, data_urodzenia, wiek,
                                                           'criteria': 'containing',
                                                           'value': "Mężczyzna",
                                                           'format': M})
-
-    # cell_format.set_font_color('red')
 
     row = 1
     col = 6
@@ -370,17 +331,6 @@ def excel_firma(headers, id, imie, nazwiska, plec, e_mail, data_urodzenia, wiek,
     print("W dokumencie znajdują się 2 arkusze tj. Pracownicy oraz Statystyki.")
 
 
-excel_firma(headers, id, imie, nazwiska, plec, e_mail, data_urodzenia, wiek, data_rozpoczęcia, staz_pracy,
-            stanowisko, dzial, zar_miesieczne, zar_roczne)
-
-"""
-srednia_na_stanowsiko(df)
-mediana_na_stanowsiko(df)
-srednia_wieku(df)
-pracownicy_na_stanowisku(df)
-pracownicy_w_dziale(df)
-k_i_m_licznik(df)
-zarobki_zw_pracowników(df)
-zarobki_supervisorow(df)
-
-"""
+if __name__ == "__main__":
+    excel_firma(headers, id, imie, nazwiska, plec, e_mail, data_urodzenia, wiek, data_rozpoczęcia, staz_pracy,
+                stanowisko, dzial, zar_miesieczne, zar_roczne)
