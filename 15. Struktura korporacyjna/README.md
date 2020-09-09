@@ -54,3 +54,4 @@ Wszyscy pracownicy zostają zapisani w pliku **Pracownicy.json**<br>
 Program ten posiada część drugą.
 
 ![alt tag](https://github.com/FilipGieraga/Python-PL/blob/master/15.%20Struktura%20korporacyjna/Struktura.png)
+![alt tag](https://github.com/FilipGieraga/Python-PL/blob/master/15.%20Struktura%20korporacyjna/excel.PNG)

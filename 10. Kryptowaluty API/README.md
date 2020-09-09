@@ -14,6 +14,6 @@ posiadanej waluty jako liczby całkowitej(np. 5) albo dziesiętnej(np. 0.4)
 8. liczy nam również wartość całkowitą portfela na podstawie podanych ilości posiadanych kryptowalut
 9. tworzy wykres kołowy ilustrujący wartość posiadanych kryptowalut
 
-## Dane są zaciągane ze strony coinmarketcap.com za pomocą mojego prywatnego api klucza
+## Dane są zaciągane ze strony coinmarketcap.com za pomocą mojego prywatnego api klucza<br><br>Jeśli coin ma spację w nazwie proszę użyć -. Przykład : Binance Coin = binance-coin
 
-## Jeśli coin ma spację w nazwie proszę użyć -. Przykład : Binance Coin = binance-coin
+![alt tag](https://github.com/FilipGieraga/Python-PL/blob/master/10.%20Kryptowaluty%20API/api_excel.PNG)
