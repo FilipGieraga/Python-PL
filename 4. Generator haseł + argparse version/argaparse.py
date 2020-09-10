@@ -1,11 +1,7 @@
 import random
 import argparse
+import string
 from argparse import RawTextHelpFormatter
-
-cyfry = "0123456789"
-duze_litery = "ABCDEFGHIJKLMNOPRSTQUWXYZ"
-male_litery = "abcdefghijklmnoprqstuwxyz"
-znaki_specjalne = "!@#$%^&*(){}[]\|:\"'<>?,./"
 
 
 def sprecyzowane_haslo(**kwargs):
@@ -13,22 +9,22 @@ def sprecyzowane_haslo(**kwargs):
     for k, v in kwargs.items():
         if k == 'c' and v != 0:
             for i in range(v):
-                p += random.choice(cyfry)
+                p += random.choice(string.digits)
         if k == 'd' and v != 0:
             for i in range(v):
-                p += random.choice(duze_litery)
+                p += random.choice(string.ascii_uppercase)
         if k == 'm' and v != 0:
             for i in range(v):
-                p += random.choice(male_litery)
+                p += random.choice(string.ascii_lowercase)
         if k == 'z' and v != 0:
             for i in range(v):
-                p += random.choice(znaki_specjalne)
+                p += random.choice(string.punctuation)
     p = ''.join(random.sample(p, len(p)))
     return print(f"Twoje sprecyzowane hasło: {p}")
 
 
 def losowo_wygenerowane_haslo(y):
-    x = cyfry + duze_litery + male_litery + znaki_specjalne
+    x = string.digits + string.ascii_uppercase + string.ascii_lowercase + string.punctuation
     x = ''.join(random.sample(x, len(x)))
     x = x[:y]
     return f"Twoje losowe hasło to: {x}"
