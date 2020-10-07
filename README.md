@@ -14,10 +14,10 @@
 <br/>
 
 ### Biggest projects so far:
-<img align="left" width="22px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/OOjs_UI_icon_check.svg/1024px-OOjs_UI_icon_check.svg.png" />15. Company Structure   <br/>
-<img align="left" width="22px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/OOjs_UI_icon_check.svg/1024px-OOjs_UI_icon_check.svg.png" />13. BMI Analysis   <br/>
-<img align="left" width="22px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/OOjs_UI_icon_check.svg/1024px-OOjs_UI_icon_check.svg.png" />10. Cryptocurrency API   <br/>
-
+<img align="left" width="22px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/OOjs_UI_icon_check.svg/1024px-OOjs_UI_icon_check.svg.png" />17. Data Visualization<br/>
+<img align="left" width="22px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/OOjs_UI_icon_check.svg/1024px-OOjs_UI_icon_check.svg.png" />15. Company Structure<br/>
+<img align="left" width="22px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/OOjs_UI_icon_check.svg/1024px-OOjs_UI_icon_check.svg.png" />13. BMI Analysis<br/>
+<img align="left" width="22px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/OOjs_UI_icon_check.svg/1024px-OOjs_UI_icon_check.svg.png" />10. Cryptocurrency API<br/>
 
 ### Languages and Tools I worked with:
 
@@ -38,16 +38,20 @@
 [website]: https://filipgieraga.github.io/
 [linkedin]: https://www.linkedin.com/in/filip-gieraga/
 
+### I work with Python 3.8
 
 ### What I've already learned in Python:
-- if and while loops
-- working with containers (i.e. tuples, lists, sets and dictionaries)
-- working with different data types  (i.e. numbers and strings)
-- exception handling
-- generating data to new files
-- working with different types of files (i.e json, csv, xlsx)
-- web scraping
-- using a variety of modules to achieve tangible results
-- drawing graphs and histograms
-- manipulating and quering data using pandas and pandasql module
-- Object-Oriented Programming
+- Variables
+- Functions
+- Lists
+- Loops
+- Sets
+- Dictionaries
+- I/O
+- Classes
+- Libraries
+- Error Handling
+- OOP basics
+- Web Scarping
+- SQL statements for data queries
+- Data Visualization
