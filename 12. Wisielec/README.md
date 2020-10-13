@@ -13,3 +13,7 @@ Wymagania: Python 3
 - jeśli przekroczy dozwoloną liczbę prób zgadywania hasła program wyświetli mu, że przegrał oraz jakie było hasło
 - jeśli trafi je przed dotarciem do limitu podejsc, program wyswietli ze trafił hasło
 - program zapyta czy chcesz zagrać jeszcze raz
+
+## Update
+Interfejs został dodany do repozytorium po angielsku.<br>
+![alt tag](https://github.com/FilipGieraga/Python-ENG/blob/master/12.%20Hangman%20game%20%2B%20GUI/GUI.PNG)
